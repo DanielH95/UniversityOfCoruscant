@@ -1,0 +1,561 @@
+/* Global Styling */
+
+html, body {
+	margin: 0;
+	height: 100%;
+	overflow: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Poller One" !important;
+}
+
+	h1 {
+		font-size: 64px;
+	}
+
+	h2 {
+		font-size: 30px;
+	}
+
+p {
+	font-family: "Open Sans" !important;
+}
+
+section {
+	margin: 1%;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+	a:hover {
+		color: #595959;
+	}
+
+/*
+This was derived from the link in this comment (only a small piece from the article was used and adjusted).
+Taken from cssportal.com by Rene Spronk and last accessed 30 October 2018.
+Source: https://www.cssportal.com/blog/style-hr-tag-with-css/
+START OF ADAPTED REFERENCE CODE.
+*/
+hr { 
+  	border : 0;
+  	height: 2px; 
+  	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0)); 
+  	margin-bottom: 25px; 
+}
+/*
+END OF ADAPTED REFERENCE CODE.
+*/
+
+
+
+
+
+
+/* Global Navigation Bar */
+
+/*
+This code was referenced from the link below and was adapted to properly activate the Hamburger menu.
+Taken from codepen.io by mutedblues and last accessed 30 October 2018.
+Source: https://codepen.io/mutedblues/pen/MmPNPG
+START OF ADAPTED REFERENCE CODE.
+*/
+.navBar {
+	background-color: #0d0d0d;
+	font-size: 24px;
+	overflow: hidden;
+	border-bottom: 4px solid #ffe066;
+}
+
+	.navBar .active {
+		font-weight: bold;
+	}
+
+		.navBar ul {
+		  	margin: 0;
+		  	padding: 0;
+		  	list-style: none;
+		 	overflow: hidden;
+		  	display: inline-block;
+		}
+
+		.navBar li a {
+		  	display: block;
+		  	text-decoration: none;
+			padding: 0%;
+			color: white;
+		}
+
+		.navBar li a:hover, .navBar .menu-btn:hover {
+		  	background-color: #ffe066;
+		  	color: black;
+		}
+
+	.navBar #siteTitle {		
+	  	display: inline-block;
+	  	float: left;
+	  	font-size: 32px;
+	  	margin-left: 2%;
+	  	text-decoration: none;
+	  	color: white;
+	  	padding-top: 6px;
+	}
+
+	.navBar #siteTitle:hover {		
+	  	color: #ffe066;
+	}
+
+/* Menu */
+
+.navBar .menu {
+	clear: both;
+	max-height: 0;
+	transition: max-height .2s ease-out;
+	padding-left: 2%;
+	display: block;
+}
+
+/* Menu Icon  */
+
+.navBar .menu-icon {	
+  	cursor: pointer;
+  	display: inline-block;
+  	float: right;
+  	padding: 50px;
+  	position: relative;
+  	user-select: none;
+}
+
+.navBar .menu-icon .navicon {
+  	background: white;
+  	display: block;
+  	height: 4px;
+  	position: relative;
+  	transition: background .2s ease-out;
+  	width: 50px;
+}
+
+	.navBar .menu-icon .navicon:before, .navBar .menu-icon .navicon:after {
+	  	background: white;
+	  	content: '';
+	  	display: block;
+	  	height: 100%;
+	  	position: absolute;
+	  	transition: all .2s ease-out;
+	  	width: 100%;
+	}
+
+		.navBar .menu-icon .navicon:before {
+		  	top: 10px;
+		}
+
+		.navBar .menu-icon .navicon:after {
+		  	top: -10px;
+		}
+
+/* Menu Button */
+
+.navBar .menu-btn {
+  	display: none;
+}
+
+	.navBar .menu-btn:checked ~ .menu {
+	  	max-height: 240px;
+	}
+
+	.navBar .menu-btn:checked ~ .menu-icon .navicon {
+	  	background: transparent;
+	}
+
+		.navBar .menu-btn:checked ~ .menu-icon .navicon:before {
+		  	transform: rotate(-45deg);
+		}
+
+		.navBar .menu-btn:checked ~ .menu-icon .navicon:after {
+		  	transform: rotate(45deg);
+		}
+
+			.navBar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before, .navBar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+			  	top: 0;
+			}
+
+/* Media Query: 48em = 768px */
+
+@media (min-width: 62em) {
+	.navBar li {
+    	float: left;
+ 	}
+
+	  	.navBar li a {
+	    	padding: 20px 30px;
+	  	}
+
+  	.navBar .menu {
+    	clear: none;
+    	float: right;
+   		max-height: none;
+  	}
+
+  	.navBar .menu-icon {
+    	display: none;
+  	}
+}
+/*
+This code was referenced from the link below and was adapted to properly activate the Hamburger menu.
+Taken from codepen.io by mutedblues and last accessed 30 October 2018.
+Source: https://codepen.io/mutedblues/pen/MmPNPG
+END OF ADAPTED REFERENCE CODE
+*/
+
+
+
+
+
+
+/* Global Footer */
+
+footer {	
+	border-top: 4px solid #ffe066;
+	overflow: hidden;
+	line-height: 20%;
+	background-color: #0d0d0d;
+	width: 100%;
+	font-size: 24px;
+	display: inline-block;
+}
+
+	#footerLeft {
+		float: left;
+		display: inline-block;
+		padding: 0%;
+		margin: 1%;
+		text-decoration: none;
+	}
+
+	#footerLeft a {
+		text-decoration: none;
+		color: white;
+	}
+
+		#footerLeft a:hover {
+			color: #ffe066;
+		}	
+
+	#footerRight {
+		float: right;
+		font-weight: bold;
+		display: inline;
+		padding: 0%;
+		margin: 1%;
+		bottom: 0px;
+	}	
+
+		#footerRight a {
+			text-decoration: none;
+			color: white;
+		}
+
+			#footerRight a:hover {
+				color: #ffe066;
+			}	
+
+
+
+
+
+/* Homepage */
+
+.topBanner {
+	/*
+	Title: Coruscant
+	License: Copyrighted (Fair Use)
+	Author: Arte-Animada
+	Author_Link: https://www.deviantart.com/arte-animada
+	Image_Link: https://www.deviantart.com/arte-animada/art/Coruscant-259192268
+	*/	
+	background-image: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.90)), url("../img/coruscant_by_arte_animada-d4abe18.jpg");
+	background-position: center;
+	background-size: cover;
+	display: inline-flex;
+	padding: 8%;
+}
+
+	.bannerText {
+		text-transform: uppercase;
+		color: white;
+	}
+
+.secondRow {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}	
+
+	.studyBox, .researchBox {
+		margin: 1%;
+		width: 100%;
+		height: 600px;
+		background-size: cover;	
+		position: relative;
+	}
+
+	.studyBox {
+		/*
+		Title: Jedi Lightsaber Construction
+		License: Copyrighted (Fair Use)
+		Author: Joel90zab
+		Author_Link: https://www.deviantart.com/joel90zab
+		Image_Link: https://www.deviantart.com/joel90zab/art/Jedi-Lightsaber-Construction-300560607
+		*/		
+		background-image: url("../img/jedi_lightsaber_construction_by_joel90zab-d4yy21r.jpg");	
+	}
+
+	.researchBox {
+		/*
+		Title: Jedi Temple
+		License: Copyrighted (Fair Use)
+		Author: defcombeta
+		Author_Link: https://www.deviantart.com/defcombeta
+		Image_Link: https://www.deviantart.com/defcombeta/art/Jedi-Temple-86817389		
+		*/
+		background-image: url("../img/jedi_temple_by_defcombeta-d1fosq5.jpg");	
+	}
+
+		.studyText, .researchText {
+			border-top: 2px solid black;
+			background-color: #d9d9d9;
+			position: absolute;
+			bottom: 0px;
+			width: 100%;
+		}
+
+		.studyText h2, .researchText h2 {
+			padding-left: 3%;	
+		}
+
+	@media (max-width: 850px) {
+	    .secondRow  {
+	        flex-direction: column;
+	        margin: 0;
+	    }
+	}    
+
+
+
+
+
+/* Quote Section*/
+
+.quoteSection {
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	padding-left: 1%;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+}
+	
+	#quoteAttr {
+		float: right;
+	}
+
+	#studentImage {
+		float: right;
+		background-size: auto;
+		padding: 1%;
+		height: 200px;
+		width: 300px;
+	}
+
+	@media (max-width: 850px) {
+	    #studentImage {
+	        display: none;
+	    }
+	}    
+
+
+
+
+
+/* News Section */
+
+.thirdRow {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}	
+
+	.newsOne, .newsTwo, .newsThr {
+		margin: 1%;
+		width: 100%;
+		height: 600px;
+		background-size: cover;	
+		position: relative;
+	}
+
+	.newsOne {
+		/*
+		Title: Dooku
+		License: Copyrighted (Fair Use)
+		Author: Chris Trevas
+		Author_Link: http://starwars.wikia.com/wiki/Chris_Trevas
+		Image_Link: http://starwars.wikia.com/wiki/File:DookuJedi_EGTF.jpg	
+		*/
+		background-image: url("../img/DookuJedi_EGTF.jpg");	
+	}
+
+	.newsTwo {
+		/*
+		Title: Rescue from Geonosis
+		License: Copyrighted (Fair Use)
+		Author: StevePalenicaStudios
+		Author_Link: https://www.deviantart.com/stevepalenicastudios
+		Image_Link: https://www.deviantart.com/stevepalenicastudios/art/Rescue-From-Geonosis-316371021
+		*/		
+		background-image: url("../img/rescue_from_geonosis_by_stevepalenicastudios-d58cxfx.jpg");	
+	}
+
+	.newsThr {
+		/*
+		Title: Valley of the Dark Lords
+		License: Copyrighted (Fair Use)
+		Author: PakPolaris
+		Author_Link: https://www.deviantart.com/pakpolaris
+		Image_Link: https://www.deviantart.com/pakpolaris/art/Valley-of-the-Dark-Lords-187269557
+		*/			
+		background-image: url("../img/valley_of_the_dark_lords_by_pakpolaris-d33hu45.jpg");	
+	}
+
+		.newsText1, .newsText2, .newsText3 {
+			border-top: 2px solid black;
+			background-color: #d9d9d9;
+			position: absolute;
+			bottom: 0px;
+			width: 100%;
+		}
+
+		.newsText1 h2, .newsText2 h2, .newsText3 h2 {
+			padding-left: 3%;	
+		}
+
+	@media (max-width: 850px) {
+	    .thirdRow  {
+	        flex-direction: column;
+	        margin: 0;
+	    }
+	}    
+			
+
+
+
+
+/* Research Page */
+
+.projectOne, .projectTwo, .projectThree {
+	clear: both;
+	margin-bottom: 10%;
+}
+
+	.projectOne h3, .projectOne p {
+		text-align: right;		
+		margin-top: 10px;
+	}
+
+	.projectTwo h3, .projectTwo p {
+		text-align: left;
+		margin-top: 10px;
+	}	
+
+	.projectThree h3, .projectThree p {
+		text-align: right;
+		margin-top: 10px;
+	}
+
+	.projectOne img {
+		float: left;
+		width: 350px;
+		height: 350px;
+		padding-right: 1%;
+		padding-bottom: 1%;
+	}
+
+	.projectTwo img {
+		float: right;
+		width: 350px;
+		height: 350px;
+		padding-left: 1%;
+		padding-bottom: 1%;
+	}
+
+	.projectThree img {
+		float: left;
+		width: 350px;
+		height: 350px;
+		padding-right: 1%;
+		padding-bottom: 1%;
+	}		
+
+	@media (max-width: 850px) {
+	    .projectOne h3, .projectOne p, .projectTwo h3, .projectTwo p, .projectThree h3, .projectThree p   {
+			text-align: justify;
+	    }
+	}    
+
+
+
+
+/* Study Page */
+
+.courseOne, .courseTwo, .courseThree {
+	clear: both;
+	margin-bottom: 10%;
+}
+
+	.courseOne h3, .courseOne p {
+		text-align: right;		
+		margin-top: 10px;
+	}
+
+	.courseTwo h3, .courseTwo p {
+		text-align: left;
+		margin-top: 10px;
+	}	
+
+	.courseThree h3, .courseThree p {
+		text-align: right;
+		margin-top: 10px;
+	}
+
+	.courseOne img {
+		float: left;
+		width: 350px;
+		height: 350px;
+		padding-right: 1%;
+		padding-bottom: 1%;
+	}
+
+	.courseTwo img {
+		float: right;
+		width: 350px;
+		height: 350px;
+		padding-left: 1%;
+		padding-bottom: 1%;
+	}
+
+	.courseThree img {
+		float: left;
+		width: 350px;
+		height: 350px;
+		padding-right: 1%;
+		padding-bottom: 1%;
+	}
+
+	@media (max-width: 850px) {
+	    .courseOne h3, .courseOne p, .courseTwo h3, .courseTwo p, .courseThree h3, .courseThree p   {
+			text-align: justify;
+	    }
+	}    				
